@@ -1,9 +1,12 @@
 .cell {
     width:100px;
     height:100px;
-    border:solid black 1px;
+    border-left:solid black 6px;
+    border-bottom: solid black 6px;
+    text-align:center;
 }
 
 .col {
     height:100px;
 }
+
