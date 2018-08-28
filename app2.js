@@ -1,7 +1,7 @@
 let cells = document.querySelectorAll('.cell');
 let x_win_cnt = 0;
 let o_win_cnt = 0;
-let gameOver = 0;
+let gameOver = false;
 let turns = false;
 
 let winConditions = [
@@ -22,8 +22,9 @@ cells.forEach(function (cell) {
 
 
 function cellClicked(e) {
-    console.log(turns);
-    if (e.target.textContent != '' && gameOver == false) {
+    console.log(e.target.textContent, gameOver);
+    if ((e.target.textContent == 'X' || e.target.textContent == 'O') && gameOver == false) {
+        console.log("cell populated");
         return;
     } else if (gameOver == true) {
         console.log("time to clear the board");
@@ -86,8 +87,11 @@ function checkWinConditions(e) {
     if (spacesFilled == cells.length) {
         alert("It's a tie!");
         return true;
+    } else {
+        return false;
     }
-}
+} 
+
 
 // function checkTie() {
 //     spacesFilled = 0;
